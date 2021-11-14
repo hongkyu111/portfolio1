@@ -1,0 +1,11 @@
+extends base.pug
+include mixins/videos
+
+block content 
+    form(method="GET") 
+        input(placeholder="제목을 검색해 주세요",name="keyword", type="text")
+        input(type="submit", value="Search now")
+
+    div
+        each video in videos  
+            +video(video)  
