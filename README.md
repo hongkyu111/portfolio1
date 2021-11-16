@@ -14,3 +14,5 @@
 /videos/:id/edit -> Edit Video
 /videos/:id/remove -> Remove Video
 /videos/upload -> Upload Video
+
+Node,ES6,mongoDB
