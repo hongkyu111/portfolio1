@@ -8,11 +8,8 @@ block content
         input(placeholder="아이디", name="username", type="text", required)
         input(placeholder="비밀번호", name="password", type="password", required)
         input(type="submit", value="join")
-        br
-        a(href="/user/github/start") Continue with Github
-    hr
-    div 
+        include partials/social-login
+    div.auth-switch
         span Don't have an account? 
-        br
         a(href="/join") Create one now &rarr;
     
