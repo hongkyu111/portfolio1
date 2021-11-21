@@ -3,8 +3,9 @@ import User from "../models/User";
 
 // 메인 페이지 기능
 export const home = async(req, res) => {
-  const videos = await Video.find({}).sort({createdAt: "desc"});
-  console.log(videos);
+  const videos = await Video.find({})
+    .sort({ createdAt: "desc" })
+    .populate("owner");
     return res.render("home", { pageTitle: "Home", videos });
 };
 
@@ -94,6 +95,7 @@ try{
   }
 };
 
+
 // 지우는 기능
 export const deleteVideo = async(req, res) => {
   const { id } = req.params;
@@ -120,7 +122,7 @@ export const search = async(req, res) => {
       title: {
         $regex: new RegExp(`${keyword}$`, "i"),
       },
-    });
+    }).populate("owner");
   }
   return res.render("search", { pageTitle:"Search", videos });
 }
