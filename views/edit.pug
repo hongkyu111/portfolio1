@@ -1,9 +1,0 @@
-extends base.pug
-
-block content 
-    h4 Update Video
-    form(method="POST") 
-        input(name="title", placeholder="제목",value=video.title,required)
-        input(name="description", placeholder="영상 소개", required, type="text" minlength=20, value=video.description)
-        input(name="hashtags", placeholder="해쉬태그, 콤마로 구분하여 주세요", required, type="text", value=video.hashtags.join())
-        input(value="Save",type="submit")
